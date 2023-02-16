@@ -29,10 +29,12 @@ app.post("/",function(req,res){
     }
 
     var jsonData= JSON.stringify(data);
-    const url="https://us11.api.mailchimp.com/3.0/lists/dd57b47673";
+    //Add list id at the end of this url:
+    const url="https://us11.api.mailchimp.com/3.0/lists/";
     const options ={
         method: "POST",
-        auth: "praharsh:33d4a2e546bf7e7d894b12a5ffffebe8-us11"
+        //Add mailchimp Api here in format auth: anystring:APIkey
+        auth: " "
     }
     const request=https.request(url,options,function(response){
 
@@ -56,8 +58,3 @@ app.post("/faliure",function(req,res){
 app.listen(3000,function(){
     console.log("The server is running on port 3000");
 });
-// API key
-// 33d4a2e546bf7e7d894b12a5ffffebe8-us11
-
-// list id 
-// dd57b47673
